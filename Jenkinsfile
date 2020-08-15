@@ -11,13 +11,11 @@ node {
    }
    stage('deploy-dev'){
        def tomcatDevIp = '23.20.56.214'
-	   def tomcatHome = '/usr/local/tomcat/'
+	   def tomcatHome = '/opt/tomcat/'
 	   def webApps = tomcatHome+'webapps/'
 	   def tomcatStart = "${tomcatHome}bin/startup.sh"
 	   def tomcatStop = "${tomcatHome}bin/shutdown.sh"
-	   sh "scp -o StrictHostKeyChecking=no target/*.jar ec2-user@${tomcatDevIp}:~/nk"
-           sh "ssh ec2-user@${tomcatDevIp} ls"
-	   
-           //sh "ssh ec2-user@${tomcatDevIp} ${tomcatStart}"
+	   sh "ssh ec2-user@${tomcatDevIp} ${tomcatStop}"
+           sh "ssh ec2-user@${tomcatDevIp} ${tomcatStart}"
    }
 }
