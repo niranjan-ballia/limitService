@@ -16,8 +16,8 @@ node {
 	   def tomcatStart = "${tomcatHome}bin/startup.sh"
 	   def tomcatStop = "${tomcatHome}bin/shutdown.sh"
 	  // sh "scp -o StrictHostKeyChecking=no target/*.jar ec2-user@${tomcatDevIp}:${webApps}myweb.war"
-           sh "ssh ec2-user@${tomcatDevIp}"
-	   sh "ls"
+           sh "ssh ec2-user@${tomcatDevIp} ls"
+	   
            //sh "ssh ec2-user@${tomcatDevIp} ${tomcatStart}"
    }
 }
