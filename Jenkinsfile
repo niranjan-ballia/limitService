@@ -10,7 +10,7 @@ node {
 	   sh "${mvn} clean package"
    }
    stage('deploy-dev'){
-       def tomcatDevIp = '23.20.56.214'
+       def tomcatDevIp = '3.84.153.55'
 	   def tomcatHome = '/opt/tomcat/'
 	   def webApps = tomcatHome+'webapps/'
 	   def tomcatStart = "${tomcatHome}bin/startup.sh"
